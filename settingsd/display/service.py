@@ -16,7 +16,7 @@ class DisplayService(dbus.service.Object):
         layoutB.add_display("laptop", 3, 0, 1200)
         self.arrangement.add_layout(layoutB)
 
-    @dbus.service.method("org.os.SettingsDaemon.Display",
+    @dbus.service.method("org.os.Settings.Display",
                          in_signature='as', out_signature='s')
     def Arrangement(self, args):
         names = args

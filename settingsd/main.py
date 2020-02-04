@@ -12,10 +12,10 @@ if __name__ == '__main__':
     loop = GLib.MainLoop()
     session_bus = dbus.SessionBus()
     
-    bus_name = 'org.os.SettingsDaemon'
+    bus_name = 'org.os.Settings'
     name = dbus.service.BusName(bus_name, session_bus)
 
-    display = DisplayService(session_bus, '/org/os/SettingsDaemon/Display')
+    display = DisplayService(session_bus, '/org/os/Settings/Display')
     display.init()
 
     print(f"settingsd started / {bus_name}")
