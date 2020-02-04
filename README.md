@@ -1,5 +1,5 @@
 # settingsd
 A DBus service providing system configuration
 
-Display
-Allows querying the current display configuration, scaling and orientation
+#### org.os.Settings.Display
+Query the display configurations, their scaling and orientation given a combination of displays
