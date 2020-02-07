@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-poetry run python settingsd/main.py
+DIR="$(dirname "${BASH_SOURCE[0]}")"
+
+python ${DIR}/../settingsd/main.py

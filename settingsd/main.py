@@ -10,12 +10,12 @@ from display import DisplayService
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
     loop = GLib.MainLoop()
-    session_bus = dbus.SessionBus()
-    
-    bus_name = 'org.os.Settings'
-    name = dbus.service.BusName(bus_name, session_bus)
+    system_bus = dbus.SystemBus()
 
-    display = DisplayService(session_bus, '/org/os/Settings/Display')
+    bus_name = 'org.os.Settings'
+    name = dbus.service.BusName(bus_name, system_bus)
+
+    display = DisplayService(system_bus, '/org/os/Settings/Display')
     display.init()
 
     print(f"settingsd started / {bus_name}")

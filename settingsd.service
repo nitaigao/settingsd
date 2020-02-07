@@ -1,0 +1,10 @@
+[Unit]
+Description=Settings Daemon
+
+[Service]
+Type=dbus
+BusName=org.os.Settings
+ExecStart=settingsd
+
+[Install]
+WantedBy=multi-user.target
