@@ -7,6 +7,8 @@ class Arrangement:
     @staticmethod
     def from_file(file_path):
         arrangement = Arrangement()
+        if not path.exists(file_path):
+            return arrangement
         with open(file_path, 'r') as file:
             layouts = load(file)
             for layout_data in layouts:

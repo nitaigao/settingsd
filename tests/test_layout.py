@@ -1,4 +1,3 @@
-from settingsd.display.display import Display
 from settingsd.display.layout import Layout
 
 def test_layout_returns_config():
@@ -11,4 +10,4 @@ def test_layout_returns_config():
         'laptop': (0, 1200, 3, True, False)
     }
 
-    assert(layout.config() == expected)
+    assert layout.config() == expected
