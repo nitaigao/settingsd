@@ -1,13 +1,14 @@
-from settingsd.display import *
+from settingsd.display.display import Display
+from settingsd.display.layout import Layout
 
 def test_layout_returns_config():
     layout = Layout()
-    layout.add_display("LG", 2, 0, 0)
-    layout.add_display("laptop", 3, 0, 1200)
+    layout.add_display("LG", 2, 0, 0, True, True)
+    layout.add_display("laptop", 3, 0, 1200, True, False)
 
     expected = {
-        'LG': { 'scale': 2, 'x': 0, 'y': 0 },
-        'laptop': { 'scale': 3, 'x': 0, 'y': 1200 }
+        'LG': (0, 0, 2, True, True),
+        'laptop': (0, 1200, 3, True, False)
     }
 
     assert(layout.config() == expected)

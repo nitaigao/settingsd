@@ -1,4 +1,28 @@
+from os import path
+from json import load
+
+from .layout import Layout
+
 class Arrangement:
+    @staticmethod
+    def from_file(file_path):
+        arrangement = Arrangement()
+        with open(file_path, 'r') as file:
+            layouts = load(file)
+            for layout_data in layouts:
+                layout = Layout()
+                for display_data in layout_data:
+                    layout.add_display(
+                        display_data['name'],
+                        display_data['scale'],
+                        display_data['x'],
+                        display_data['y'],
+                        display_data['enabled'],
+                        display_data['primary'])
+                arrangement.add_layout(layout)
+
+        return arrangement
+
     def __init__(self):
         self.layouts = []
 

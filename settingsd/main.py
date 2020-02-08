@@ -5,7 +5,7 @@ from gi.repository import GLib
 import dbus
 import dbus.mainloop.glib
 
-from display import DisplayService
+from display.service import DisplayService
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
@@ -14,9 +14,7 @@ if __name__ == '__main__':
 
     bus_name = 'org.os.Settings'
     name = dbus.service.BusName(bus_name, system_bus)
-
-    display = DisplayService(system_bus, '/org/os/Settings/Display')
-    display.init()
+    DisplayService(system_bus, '/org/os/Settings/Display')
 
     print(f"settingsd started / {bus_name}")
     loop.run()
