@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
 
-DIR="$(dirname "${BASH_SOURCE[0]}")"
-
-python ${DIR}/../settingsd/main.py
+from settingsd import main
+main()
